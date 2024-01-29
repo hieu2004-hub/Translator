@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".TranslateActivity">
+
+    <ScrollView
+        android:layout_width="400dp"
+        android:layout_height="600dp"
+        android:layout_above="@+id/optionsLl"
+        android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/sourceLanguageEt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/darker_gray"
+                android:hint="Enter English"
+                android:minHeight="75dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/destinationLanguageTv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@android:color/darker_gray"
+                android:hint="Translated Text"
+                android:minHeight="75dp"
+                android:textColor="@android:color/black"
+                android:textSize="20sp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/optionsLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_above="@+id/translateBtn">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/sourceLanguageChooseBtn"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="English"
+            app:cornerRadius="10dp"/>
+
+        <ImageButton
+            android:id="@+id/voiceBtn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:padding="15dp"
+            android:background="@android:color/transparent"
+            android:contentDescription=" "
+            android:src="@drawable/mic"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/destinationLanguageChooseBtn"
+            android:layout_width="145dp"
+            android:layout_height="wrap_content"
+            android:text="Vietnamese"
+            app:cornerRadius="10dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/translateBtn"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        app:cornerRadius="10dp"
+        app:icon="@drawable/baseline_g_translate_24"
+        android:text="Translate"/>
+</RelativeLayout>
